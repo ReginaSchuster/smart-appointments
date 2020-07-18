@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class CarEntity {
 
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long carId;
 
     @Column(name = "model", nullable = false)

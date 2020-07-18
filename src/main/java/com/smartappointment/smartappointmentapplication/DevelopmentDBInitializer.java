@@ -24,25 +24,25 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
     @Transactional
     public void run(ApplicationArguments args) {
 
-        CarEntity car1 = CarEntity.builder()
-                .carId((long) 1)
-                .model("VW Golf")
-                .location(new Location((long) 1,200.0, 200.0))
-                .build();
-        entityManager.persist(car1);
-
-        CarEntity car2 = CarEntity.builder()
-                .carId((long) 2)
-                .model("Smart")
-                .location(new Location((long) 2,150.0, 200.0))
-                .build();
-        entityManager.persist(car2);
-
-        CarEntity car3 = CarEntity.builder()
-                .carId((long) 3)
-                .model("Audi TT")
-                .location(new Location((long) 3,100.0, 100.0))
-                .build();
-        entityManager.persist(car3);
+//        CarEntity car1 = CarEntity.builder()
+//                .carId((long) 1)
+//                .model("VW Golf")
+//                .location(new Location((long) 1,200.0, 200.0))
+//                .build();
+//        entityManager.persist(car1);
+//
+//        CarEntity car2 = CarEntity.builder()
+//                .carId((long) 2)
+//                .model("Smart")
+//                .location(new Location((long) 2,150.0, 200.0))
+//                .build();
+//        entityManager.persist(car2);
+//
+//        CarEntity car3 = CarEntity.builder()
+//                .carId((long) 3)
+//                .model("Audi TT")
+//                .location(new Location((long) 3,100.0, 100.0))
+//                .build();
+//        entityManager.persist(car3);
     }
 }
