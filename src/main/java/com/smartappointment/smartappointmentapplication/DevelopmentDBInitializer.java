@@ -26,19 +26,19 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
 
         CarEntity car1 = CarEntity.builder()
                 .model("VW Golf")
-                .location(new Location((long) 1,200.0, 200.0))
+                .location(new Location((long) 1,200.0, 200.0, 0))
                 .build();
         entityManager.persist(car1);
 
         CarEntity car2 = CarEntity.builder()
                 .model("Smart")
-                .location(new Location((long) 2,150.0, 200.0))
+                .location(new Location((long) 2,150.0, 200.0, 0))
                 .build();
         entityManager.persist(car2);
 
         CarEntity car3 = CarEntity.builder()
                 .model("Audi TT")
-                .location(new Location((long) 3,100.0, 100.0))
+                .location(new Location((long) 3,100.0, 100.0, 1))
                 .build();
         entityManager.persist(car3);
     }
