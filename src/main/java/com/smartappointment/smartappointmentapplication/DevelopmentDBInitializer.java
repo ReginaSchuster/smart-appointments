@@ -41,5 +41,15 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .location(new Location((long) 3,100.0, 100.0, 1))
                 .build();
         entityManager.persist(car3);
+
+        AppointmentEntity appointment1 = AppointmentEntity.builder()
+                .accepted(false)
+                .build();
+        entityManager.persist(appointment1);
+
+        AppointmentEntity appointment2 = AppointmentEntity.builder()
+                .accepted(false)
+                .build();
+        entityManager.persist(appointment2);
     }
 }
