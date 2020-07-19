@@ -1,5 +1,9 @@
 package com.smartappointment.smartappointmentapplication;
 
+import com.smartappointment.smartappointmentapplication.appointment.AppointmentEntity;
+import com.smartappointment.smartappointmentapplication.car.CarEntity;
+import com.smartappointment.smartappointmentapplication.distance.Location;
+import com.smartappointment.smartappointmentapplication.user.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -51,5 +55,18 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .accepted(false)
                 .build();
         entityManager.persist(appointment2);
+
+        AppointmentEntity appointment3 = AppointmentEntity.builder()
+                .accepted(false)
+                .build();
+        entityManager.persist(appointment3);
+
+        UserEntity user1 = UserEntity.builder()
+                .firstName("Regina")
+                .lastName("Schuster")
+                .eMail("regina_schuster@gmx.de")
+                .location(new Location((long) 11,500.0, 500.0, 1))
+                .build();
+        entityManager.persist(user1);
     }
 }

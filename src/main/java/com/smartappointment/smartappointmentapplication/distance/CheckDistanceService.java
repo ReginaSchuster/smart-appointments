@@ -1,5 +1,9 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.distance;
 
+import com.smartappointment.smartappointmentapplication.car.CarEntity;
+import com.smartappointment.smartappointmentapplication.car.CarRepository;
+import com.smartappointment.smartappointmentapplication.car.CarService;
+import com.smartappointment.smartappointmentapplication.car.SendCarLocationRequest;
 import com.smartappointment.smartappointmentapplication.email.AbstractEmail;
 import com.smartappointment.smartappointmentapplication.email.AppointmentSuggestionEmail;
 import com.smartappointment.smartappointmentapplication.email.EmailService;

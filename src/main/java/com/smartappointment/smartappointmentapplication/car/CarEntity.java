@@ -1,5 +1,6 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.car;
 
+import com.smartappointment.smartappointmentapplication.distance.Location;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

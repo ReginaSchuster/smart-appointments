@@ -1,9 +1,10 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.car;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -17,6 +18,10 @@ public class CarService {
 
     public List<CarEntity> getAllCars() {
         return carRepository.findAll();
+    }
+
+    public CarEntity getCar(Long carId) {
+        return carRepository.findByCarId(carId);
     }
 
     /*public List<CarEntity> findAllCars() {

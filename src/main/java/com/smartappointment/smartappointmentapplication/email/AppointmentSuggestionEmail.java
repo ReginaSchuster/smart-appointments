@@ -1,6 +1,6 @@
 package com.smartappointment.smartappointmentapplication.email;
 
-import com.smartappointment.smartappointmentapplication.CarEntity;
+import com.smartappointment.smartappointmentapplication.car.CarEntity;
 
 public class AppointmentSuggestionEmail extends AbstractEmail {
 

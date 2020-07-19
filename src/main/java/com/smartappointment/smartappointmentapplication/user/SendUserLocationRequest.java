@@ -1,4 +1,6 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.user;
+
+import com.smartappointment.smartappointmentapplication.distance.Location;
 
 public class SendUserLocationRequest {
 

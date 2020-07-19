@@ -1,4 +1,6 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.car;
+
+import com.smartappointment.smartappointmentapplication.distance.Location;
 
 public class SendCarLocationRequest {
 

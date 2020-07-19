@@ -1,4 +1,4 @@
-package com.smartappointment.smartappointmentapplication;
+package com.smartappointment.smartappointmentapplication.distance;
 
 import lombok.Builder;
 
