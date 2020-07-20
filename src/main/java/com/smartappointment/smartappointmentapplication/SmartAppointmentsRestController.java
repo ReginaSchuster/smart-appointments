@@ -27,19 +27,31 @@ public class SmartAppointmentsRestController {
         this.userService = userService;
     }
 
-    @PostMapping(path = "/rest/v1/userlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> processCurrentUserLocation(@RequestBody SendUserLocationRequest userRequest) {
-        checkDistanceService.checkDistance(userRequest.getClientId(), userRequest.getCurrentUserLocation());
+//    @PostMapping(path = "/rest/v1/userlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<Void> processCurrentUserLocation(@RequestBody SendUserLocationRequest userRequest) {
+//        checkDistanceService.checkDistance(userRequest.getClientId(), userRequest.getCurrentUserLocation());
+//        return ResponseEntity.ok().build();
+//    }
+
+    @PatchMapping(path = "/rest/v1/user/{userId}/userlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> processCurrentUserLocation(@PathVariable("userId") Long userId, @RequestBody SendUserLocationRequest userRequest) {
+        checkDistanceService.checkDistance(userId, userRequest.getCurrentUserLocation());
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping(path = "/rest/v1/carlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> processCurrentCarLocation(@RequestBody SendCarLocationRequest carRequest) {
-        checkDistanceService.addCarToFleet(carRequest);
+//    @PostMapping(path = "/rest/v1/carlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<Void> processCurrentCarLocation(@RequestBody SendCarLocationRequest carRequest) {
+//        checkDistanceService.addCarToFleet(carRequest);
+//        return ResponseEntity.ok().build();
+//    }
+
+    @PatchMapping(path = "/rest/v1/car/{carId}/carlocation", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Void> processCurrentCarLocation(@PathVariable("carId") Long carId, @RequestBody SendCarLocationRequest carRequest) {
+        checkDistanceService.updateCurrentCarLocation(carId, carRequest);
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping(path = "/rest/v1/appointment/{appointmentId}/accepted/{accepted}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PatchMapping(path = "/rest/v1/appointment/{appointmentId}/accepted/{accepted}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> processAcceptanceStatus(@PathVariable("appointmentId") Long appointmentId, @PathVariable("accepted") boolean accepted) {
         checkAcceptanceStatusService.updateAcceptanceStatus(appointmentId, accepted);
         return ResponseEntity.ok().build();

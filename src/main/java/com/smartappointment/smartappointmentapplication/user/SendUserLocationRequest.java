@@ -5,26 +5,26 @@ import com.smartappointment.smartappointmentapplication.distance.Location;
 public class SendUserLocationRequest {
 
     private Location currentUserLocation;
-    private Long clientId;
+    private Long userId;
 
-    public SendUserLocationRequest(Location currentUserLocation, Long clientId) {
+    public SendUserLocationRequest(Location currentUserLocation, Long userId) {
         this.currentUserLocation = currentUserLocation;
-        this.clientId = clientId;
+        this.userId = userId;
     }
 
     public Location getCurrentUserLocation() {
         return currentUserLocation;
     }
 
-    public Long getClientId() {
-        return clientId;
+    public Long getUserId() {
+        return userId;
     }
 
     public void setCurrentUserLocation(Location currentUserLocation) {
         this.currentUserLocation = currentUserLocation;
     }
 
-    public void setClientId(Long clientId) {
-        this.clientId = clientId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
