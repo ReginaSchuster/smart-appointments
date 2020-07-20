@@ -103,11 +103,11 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
 
         // USERS ----------------------------------------------------------------------------------------
         UserEntity user1 = UserEntity.builder()
-                .firstName("Experiment-Example-User")
-                .lastName("Experiment-Example-User")
-                .eMail("regina_schuster@gmx.de")
+                .firstName("Example")
+                .lastName("User")
+                .eMail("smartappointment.exampleuser@gmail.com")
                 .dateOfRegistry("20.07.2020")
-                .dateOfBirth("20.02.2000")
+                .dateOfBirth("18.09.1992")
                 .location(new Location((long) 11,500.0, 500.0, 0))
                 .build();
         entityManager.persist(user1);
