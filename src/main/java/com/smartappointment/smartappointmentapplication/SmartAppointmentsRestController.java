@@ -51,7 +51,7 @@ public class SmartAppointmentsRestController {
         return ResponseEntity.ok().build();
     }
 
-    @PatchMapping(path = "/rest/v1/appointment/{appointmentId}/accepted/{accepted}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/rest/v1/appointment/{appointmentId}/accepted/{accepted}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> processAcceptanceStatus(@PathVariable("appointmentId") Long appointmentId, @PathVariable("accepted") boolean accepted) {
         checkAcceptanceStatusService.updateAcceptanceStatus(appointmentId, accepted);
         return ResponseEntity.ok().build();
