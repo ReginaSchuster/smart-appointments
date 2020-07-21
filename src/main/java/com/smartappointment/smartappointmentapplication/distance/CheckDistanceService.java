@@ -38,7 +38,7 @@ public class CheckDistanceService {
         for (CarEntity car : cars) {
             double distance = distanceCalculator.calculateDistance(clientLocation, car.getLocation());
             if (distance <= 1) {
-                AbstractEmail appointmentSuggestionEmail = new AppointmentSuggestionEmail("regina_schuster@gmx.de", car);
+                AbstractEmail appointmentSuggestionEmail = new AppointmentSuggestionEmail("smartappointment.exampleuser@gmail.com", car);
                 emailService.sendEmail(appointmentSuggestionEmail);
             }
         }
