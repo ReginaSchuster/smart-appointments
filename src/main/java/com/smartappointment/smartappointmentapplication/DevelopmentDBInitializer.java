@@ -37,7 +37,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("No car boot")
                 .selfDriving(true)
                 .rating(0.0)
-                .location(new Location((long) 1,234.0, 234.0, 2))
+                .location(new Location((long) 1,150.0, 200.0, 0))
                 .build();
         entityManager.persist(car1);
 
@@ -49,7 +49,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("Big-sized car boot")
                 .selfDriving(false)
                 .rating(4.5)
-                .location(new Location((long) 2,200.0, 200.0, 0))
+                .location(new Location((long) 2,500.0, 600.0, 0))
                 .build();
         entityManager.persist(car2);
 
@@ -61,7 +61,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("Small-sized car boot")
                 .selfDriving(false)
                 .rating(5.0)
-                .location(new Location((long) 3,150.0, 200.0, 0))
+                .location(new Location((long) 3,300.0, 350.0, 0))
                 .build();
         entityManager.persist(car3);
 
@@ -73,7 +73,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("Medium-sized car boot")
                 .selfDriving(false)
                 .rating(3.0)
-                .location(new Location((long) 4,100.0, 100.0, 1))
+                .location(new Location((long) 4,300.0, 400.0, 0))
                 .build();
         entityManager.persist(car4);
 
@@ -85,7 +85,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("Medium-sized car boot")
                 .selfDriving(false)
                 .rating(4.7)
-                .location(new Location((long) 5,105.0, 110.0, 3))
+                .location(new Location((long) 5,250.0, 300.0, 0))
                 .build();
         entityManager.persist(car5);
 
@@ -97,7 +97,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .carBoot("Small-sized car boot")
                 .selfDriving(false)
                 .rating(3.9)
-                .location(new Location((long) 6,234.0, 234.0, 2))
+                .location(new Location((long) 6,450.0, 500.0, 0))
                 .build();
         entityManager.persist(car6);
 
@@ -108,7 +108,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("smartappointment.exampleuser@gmail.com")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("18.09.1992")
-                .location(new Location((long) 11,500.0, 500.0, 0))
+                .location(new Location((long) 11,110.0, 120.0, 0))
                 .build();
         entityManager.persist(user1);
 
@@ -118,7 +118,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("regina_schuster@gmx.de")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("13.05.1992")
-                .location(new Location((long) 12,500.0, 500.0, 0))
+                .location(new Location((long) 12,450.0, 550.0, 0))
                 .build();
         entityManager.persist(user2);
 
@@ -128,7 +128,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("carina_urbanke@gmx.de")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("27.07.1994")
-                .location(new Location((long) 13,500.0, 500.0, 0))
+                .location(new Location((long) 13,350.0, 500.0, 0))
                 .build();
         entityManager.persist(user3);
 
@@ -138,7 +138,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("gabi-müller@gmx.de")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("07.06.1984")
-                .location(new Location((long) 14,500.0, 500.0, 0))
+                .location(new Location((long) 14,500.0, 600.0, 0))
                 .build();
         entityManager.persist(user4);
 
@@ -148,7 +148,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("hansilebschi@gmail.com")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("13.02.1955")
-                .location(new Location((long) 15,500.0, 500.0, 0))
+                .location(new Location((long) 15,280.0, 350.0, 0))
                 .build();
         entityManager.persist(user5);
 
@@ -158,7 +158,7 @@ public class DevelopmentDBInitializer implements ApplicationRunner {
                 .eMail("simon-berber@gmail.com")
                 .dateOfRegistry("20.07.2020")
                 .dateOfBirth("07.02.1980")
-                .location(new Location((long) 16,500.0, 500.0, 0))
+                .location(new Location((long) 16,300.0, 550.0, 0))
                 .build();
         entityManager.persist(user6);
 
