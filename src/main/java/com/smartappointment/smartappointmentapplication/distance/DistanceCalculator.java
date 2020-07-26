@@ -1,3 +1,5 @@
+// Calculation adapted from https://dzone.com/articles/distance-calculation-using-3
+
 package com.smartappointment.smartappointmentapplication.distance;
 
 import org.springframework.stereotype.Service;

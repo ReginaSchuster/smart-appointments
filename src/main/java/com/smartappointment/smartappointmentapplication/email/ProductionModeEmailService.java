@@ -1,3 +1,4 @@
+// Service adapted from https://www.quickprogrammingtips.com/spring-boot/how-to-send-email-from-spring-boot-applications.html and https://www.onlinetutorialspoint.com/spring-boot/how-to-send-spring-boot-mail-example.html
 package com.smartappointment.smartappointmentapplication.email;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,17 +21,15 @@ import java.util.concurrent.Executors;
 @Service
 @Slf4j
 @Profile({"prod"})
-public class JavaMailEmailService implements EmailService {
+public class ProductionModeEmailService implements EmailService {
 
   private final JavaMailSender emailSender;
   private final ISpringTemplateEngine templateEngine;
-  private final MailProperties mailProperties;
   private Executor executor;
 
-  public JavaMailEmailService(JavaMailSender emailSender, ISpringTemplateEngine templateEngine, MailProperties mailProperties) {
+  public ProductionModeEmailService(JavaMailSender emailSender, ISpringTemplateEngine templateEngine) {
     this.emailSender = emailSender;
     this.templateEngine = templateEngine;
-    this.mailProperties = mailProperties;
   }
 
   @PostConstruct
@@ -39,8 +38,7 @@ public class JavaMailEmailService implements EmailService {
   }
 
   @Async
-  @Override
-  public void sendEmail(AbstractEmail email) {
+  public void sendEmail(AppointmentSuggestionEmail email) {
     executor.execute(() -> {
       MimeMessage mimeMessage = createMimeMessage(email);
       sendEmail(mimeMessage);
@@ -51,15 +49,14 @@ public class JavaMailEmailService implements EmailService {
     try {
       emailSender.send(mimeMessage);
     }
-    catch (MailException me) {
-      log.error("Unable to send email", me);
+    catch (MailException e) {
+      log.error("Error while sending email.", e);
     }
   }
 
-  private MimeMessage createMimeMessage(AbstractEmail email) {
+  private MimeMessage createMimeMessage(AppointmentSuggestionEmail email) {
     MimeMessage mimeMessage = emailSender.createMimeMessage();
     Context context = new Context();
-    context.setVariables(email.getEnhancedViewModel(mailProperties.getApplicationHostUrl()));
     String html = templateEngine.process(email.getTemplateName(), context);
 
     try {
@@ -67,17 +64,14 @@ public class JavaMailEmailService implements EmailService {
       helper.setTo(email.getRecipient());
       helper.setText(html, true);
       helper.setSubject(email.getSubject());
-      helper.setFrom(mailProperties.getFromEmail());
-      helper.setReplyTo(mailProperties.getFromEmail());
+      helper.setFrom("no-reply@smartappointments.com");
+      helper.setReplyTo("no-reply@smartappointments.com");
     }
-    catch (MessagingException me) {
-      log.error("Unable to create email", me);
+    catch (MessagingException e) {
+      log.error("Error while creating email.", e);
     }
 
     return mimeMessage;
   }
 
-  void setExecutor(Executor executor) {
-    this.executor = executor;
-  }
 }

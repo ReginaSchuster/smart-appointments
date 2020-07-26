@@ -23,16 +23,5 @@ public class CheckAcceptanceStatusService {
         return appointmentRepository.save(appointmentEntity);
 
     }
-//    public AppointmentEntity updateAcceptanceStatus (Long appointmentId, boolean accepted) {
-//        var appointmentEntity= appointmentRepository.findByAppointmentId(appointmentId);
-//        if (appointmentEntity.isPresent()) {
-//            var appointmentEntityToUpdate = appointmentEntity.get();
-//            appointmentEntityToUpdate.setAccepted(true);
-//
-//            return appointmentRepository.save(appointmentEntityToUpdate);
-//        }
-//        else {
-//            return null;
-//        }
-//    }
+
 }
